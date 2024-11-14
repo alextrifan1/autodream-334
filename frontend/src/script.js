@@ -51,6 +51,28 @@ document.addEventListener("DOMContentLoaded", function () {
         console.log("Mesaj trimis:", message);
         // Aici poți trimite mesajul printr-un API sau să îl salvezi într-o bază de date
         messageModal.style.display = "none"; // Închide modalul după trimiterea mesajului
-    });
+    })
+    function searchParts() {
+        console.log("Funcția searchParts a fost apelată"); // Linie de testare pentru a verifica dacă funcția este apelată
 
+        // Preia valoarea din câmpul de căutare și convertește la litere mici pentru a face căutarea insensibilă la majuscule
+        const query = document.getElementById('search-input').value.toLowerCase();
+        // Selectează toate elementele de anunțuri
+        const parts = document.querySelectorAll('.part-item');
+
+        // Parcurge toate anunțurile și afișează doar cele care se potrivesc cu termenul de căutare
+        parts.forEach(part => {
+            // Extrage textul din titlu și categorie pentru fiecare anunț
+            const title = part.querySelector('h3').textContent.toLowerCase();
+            const category = part.querySelector('p').textContent.toLowerCase();
+
+            // Verifică dacă titlul sau categoria conține textul căutat
+            if (title.includes(query) || category.includes(query)) {
+                part.style.display = 'block';  // Afișează anunțul dacă se potrivește
+            } else {
+                part.style.display = 'none';   // Ascunde anunțul dacă nu se potrivește
+            }
+        });
+    }
+    
 });

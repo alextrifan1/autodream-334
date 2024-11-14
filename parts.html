@@ -8,44 +8,48 @@
 </head>
 <body>
 
-    <header>
-        <h1>AutoDream - Anunțuri piese auto</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Acasă</a></li>
-            </ul>
-        </nav>
-    </header>
+<header>
+    <h1>AutoDream - Anunțuri piese auto</h1>
+    <nav>
+        <ul>
+            <li><a href="index.html">Acasă</a></li>
+        </ul>
+    </nav>
+    <div class="search-bar">
+        <label for="search-input"> </label>
+        <input type="text" id="search-input" placeholder="Caută piese..." oninput="searchParts()" />
+        <button onclick="searchParts()">Caută</button>
+    </div>
+</header>
 
-    <main>
-        <h2>Listează Piesele Disponibile</h2>
-        <div class="parts-listing">
-            <div class="part-item">
-                <h3><a href="frontend/src/listing.html">Radiator Audi A4 B8</a></h3>
-                <p>Categorie: Cooling System</p>
-                <p>Preț: 250 EUR</p>
-                <img src="images/radiator_apa.jpg" alt="Radiator Audi A4 B8" />
-                <button><a href="frontend/src/listing.html">Vezi Detalii</a></button>
-            </div>
-            
-            <!-- Add more parts here -->
-            <div class="part-item">
-                <h3><a href="frontend/src/listing.html">Furtun Audi A4 B8</a></h3>
-                <p>Categorie: Cooling System</p>
-                <p>Preț: 120 EUR</p>
-                <img src="images/furtun.jpg" alt="Furtun Audi A4 B8" />
-                <button><a href="frontend/src/listing.html">Vezi Detalii</a></button>
-            </div>
-
-            <!-- Repeat for other parts -->
+<main>
+    <h2>Listează Piesele Disponibile</h2>
+    <div class="parts-listing">
+        <div class="part-item">
+            <h3><a href="frontend/src/listing.html">Radiator Audi A4 B8</a></h3>
+            <p>Categorie: Cooling System</p>
+            <p>Preț: 250 EUR</p>
+            <img src="images/radiator_apa.jpg" alt="Radiator Audi A4 B8" />
+            <button><a href="frontend/src/listing.html">Vezi Detalii</a></button>
         </div>
-    </main>
+        <!-- Add more parts here -->
+        <div class="part-item">
+            <h3><a href="frontend/src/listing.html">Furtun Audi A4 B8</a></h3>
+            <p>Categorie: Cooling System</p>
+            <p>Preț: 120 EUR</p>
+            <img src="images/furtun.jpg" alt="Furtun Audi A4 B8" />
+            <button><a href="frontend/src/listing.html">Vezi Detalii</a></button>
+        </div>
+        <!-- Repeat for other parts -->
+    </div>
+</main>
 
-    <footer>
-        <p>&copy; 2024 AutoDream. Toate drepturile rezervate.</p>
-    </footer>
+<footer>
+    <p>&copy; 2024 AutoDream. Toate drepturile rezervate.</p>
+</footer>
 
-    <script src="script.js"></script>
+<!-- Scriptul trebuie plasat la finalul documentului -->
+<script src="frontend/src/script.js"></script>
 
 </body>
 </html>

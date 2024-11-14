@@ -86,3 +86,14 @@ nav ul li a:hover {
 .part-item button:hover {
     background-color: #0056b3;
 }
+.search-bar {
+    margin-top: 10px;
+    text-align: right;
+}
+
+#search-input {
+    padding: 5px;
+    width: 200px;
+    font-size: 16px;
+}
+
