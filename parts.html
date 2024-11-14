@@ -7,45 +7,85 @@
     <link rel="stylesheet" href="css/parts.css">
 </head>
 <body>
+<header>
+    <div class="logo-container">
+        <img src="images/AutoDream_logo.png" alt="AutoDream Logo" style="height: 200px; width: auto;">
+    <h1>AutoDream - Anunțuri piese auto</h1>
+    <nav>
+        <ul>
+            <li><a href="index.html">Acasă</a></li>
+        </ul>
+    </nav>
+    <div class="search-bar">
+        <label for="title">Caută după nume:</label>
+        <input type="text" id="title" placeholder="Caută după nume..." />
 
-    <header>
-        <h1>AutoDream - Anunțuri piese auto</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Acasă</a></li>
-            </ul>
-        </nav>
-    </header>
+        <label for="category">Caută după categorie:</label>
+        <input type="text" id="category" placeholder="Caută după categorie..." />
 
-    <main>
-        <h2>Listează Piesele Disponibile</h2>
-        <div class="parts-listing">
-            <div class="part-item">
-                <h3><a href="frontend/src/listing.html">Radiator Audi A4 B8</a></h3>
-                <p>Categorie: Cooling System</p>
-                <p>Preț: 250 EUR</p>
-                <img src="images/radiator_apa.jpg" alt="Radiator Audi A4 B8" />
-                <button><a href="frontend/src/listing.html">Vezi Detalii</a></button>
-            </div>
-            
-            <!-- Add more parts here -->
-            <div class="part-item">
-                <h3><a href="frontend/src/listing.html">Furtun Audi A4 B8</a></h3>
-                <p>Categorie: Cooling System</p>
-                <p>Preț: 120 EUR</p>
-                <img src="images/furtun.jpg" alt="Furtun Audi A4 B8" />
-                <button><a href="frontend/src/listing.html">Vezi Detalii</a></button>
-            </div>
+        <label for="price">Caută după preț maxim:</label>
+        <input type="number" id="price" placeholder="Caută după preț maxim..." />
+    </div>
 
-            <!-- Repeat for other parts -->
+</header>
+
+<main>
+    <h2>Listează Piesele Disponibile</h2>
+    <div class="parts-listing">
+        <div class="part-item">
+            <h3><a href="frontend/src/listing.html">Radiator Audi A4 B8</a></h3>
+            <p>Categorie: Cooling System</p>
+            <p>Preț: 250 EUR</p>
+            <img src="images/radiator_apa.jpg" alt="Radiator Audi A4 B8" />
+            <button><a href="frontend/src/listing.html">Vezi Detalii</a></button>
         </div>
-    </main>
+        <div class="part-item">
+            <h3><a href="frontend/src/listing.html">Furtun Audi A4 B8</a></h3>
+            <p>Categorie: Cooling System</p>
+            <p>Preț: 120 EUR</p>
+            <img src="images/furtun.jpg" alt="Furtun Audi A4 B8" />
+            <button><a href="frontend/src/listing.html">Vezi Detalii</a></button>
+        </div>
+        <div class="part-item">
+            <h3><a href="frontend/src/listing.html">Plăcuțe frână BMW X5</a></h3>
+            <p>Categorie: Brake System</p>
+            <p>Preț: 200 EUR</p>
+            <img src="images/placute_frana.jpg" alt="Plăcuțe frână BMW X5" />
+            <button><a href="frontend/src/listing.html">Vezi Detalii</a></button>
+        </div>
+        <!-- Cele 3 piese noi -->
+        <div class="part-item">
+            <h3><a href="frontend/src/listing.html">Faruri Audi Q5</a></h3>
+            <p>Categorie: Lighting</p>
+            <p>Preț: 450 EUR</p>
+            <img src="images/faruri_audi_q5.jpg" alt="Faruri Audi Q5" />
+            <button><a href="frontend/src/listing.html">Vezi Detalii</a></button>
+        </div>
+        <div class="part-item">
+            <h3><a href="frontend/src/listing.html">Suspensie VW Golf 7</a></h3>
+            <p>Categorie: Suspension</p>
+            <p>Preț: 300 EUR</p>
+            <img src="images/suspensie_vw_golf7.jpg" alt="Suspensie VW Golf 7" />
+            <button><a href="frontend/src/listing.html">Vezi Detalii</a></button>
+        </div>
+        <div class="part-item">
+            <h3><a href="frontend/src/listing.html">Amortizoare Ford Focus</a></h3>
+            <p>Categorie: Suspension</p>
+            <p>Preț: 150 EUR</p>
+            <img src="images/amortizoare_ford_focus.jpg" alt="Amortizoare Ford Focus" />
+            <button><a href="frontend/src/listing.html">Vezi Detalii</a></button>
+        </div>
+        <!-- Adaugă mai multe piese aici -->
+    </div>
 
-    <footer>
-        <p>&copy; 2024 AutoDream. Toate drepturile rezervate.</p>
-    </footer>
+</main>
 
-    <script src="script.js"></script>
+<footer>
+    <p>&copy; 2024 AutoDream. Toate drepturile rezervate.</p>
+</footer>
+
+<!-- Scriptul trebuie plasat la finalul documentului -->
+<script src="frontend/src/script.js"></script>
 
 </body>
 </html>
