@@ -7,8 +7,9 @@
     <link rel="stylesheet" href="css/parts.css">
 </head>
 <body>
-
 <header>
+    <div class="logo-container">
+        <img src="images/AutoDream_logo.png" alt="AutoDream Logo" style="height: 200px; width: auto;">
     <h1>AutoDream - Anunțuri piese auto</h1>
     <nav>
         <ul>
@@ -16,10 +17,16 @@
         </ul>
     </nav>
     <div class="search-bar">
-        <label for="search-input"> </label>
-        <input type="text" id="search-input" placeholder="Caută piese..." oninput="searchParts()" />
-        <button onclick="searchParts()">Caută</button>
+        <label for="title">Caută după nume:</label>
+        <input type="text" id="title" placeholder="Caută după nume..." />
+
+        <label for="category">Caută după categorie:</label>
+        <input type="text" id="category" placeholder="Caută după categorie..." />
+
+        <label for="price">Caută după preț maxim:</label>
+        <input type="number" id="price" placeholder="Caută după preț maxim..." />
     </div>
+
 </header>
 
 <main>
@@ -32,7 +39,6 @@
             <img src="images/radiator_apa.jpg" alt="Radiator Audi A4 B8" />
             <button><a href="frontend/src/listing.html">Vezi Detalii</a></button>
         </div>
-        <!-- Add more parts here -->
         <div class="part-item">
             <h3><a href="frontend/src/listing.html">Furtun Audi A4 B8</a></h3>
             <p>Categorie: Cooling System</p>
@@ -40,8 +46,38 @@
             <img src="images/furtun.jpg" alt="Furtun Audi A4 B8" />
             <button><a href="frontend/src/listing.html">Vezi Detalii</a></button>
         </div>
-        <!-- Repeat for other parts -->
+        <div class="part-item">
+            <h3><a href="frontend/src/listing.html">Plăcuțe frână BMW X5</a></h3>
+            <p>Categorie: Brake System</p>
+            <p>Preț: 200 EUR</p>
+            <img src="images/placute_frana.jpg" alt="Plăcuțe frână BMW X5" />
+            <button><a href="frontend/src/listing.html">Vezi Detalii</a></button>
+        </div>
+        <!-- Cele 3 piese noi -->
+        <div class="part-item">
+            <h3><a href="frontend/src/listing.html">Faruri Audi Q5</a></h3>
+            <p>Categorie: Lighting</p>
+            <p>Preț: 450 EUR</p>
+            <img src="images/faruri_audi_q5.jpg" alt="Faruri Audi Q5" />
+            <button><a href="frontend/src/listing.html">Vezi Detalii</a></button>
+        </div>
+        <div class="part-item">
+            <h3><a href="frontend/src/listing.html">Suspensie VW Golf 7</a></h3>
+            <p>Categorie: Suspension</p>
+            <p>Preț: 300 EUR</p>
+            <img src="images/suspensie_vw_golf7.jpg" alt="Suspensie VW Golf 7" />
+            <button><a href="frontend/src/listing.html">Vezi Detalii</a></button>
+        </div>
+        <div class="part-item">
+            <h3><a href="frontend/src/listing.html">Amortizoare Ford Focus</a></h3>
+            <p>Categorie: Suspension</p>
+            <p>Preț: 150 EUR</p>
+            <img src="images/amortizoare_ford_focus.jpg" alt="Amortizoare Ford Focus" />
+            <button><a href="frontend/src/listing.html">Vezi Detalii</a></button>
+        </div>
+        <!-- Adaugă mai multe piese aici -->
     </div>
+
 </main>
 
 <footer>
