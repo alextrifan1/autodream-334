@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <link rel="stylesheet" href="css/profile.css">
+</head>
+<body>
+    <div class="profile-header">
+        <img src="images/user.png" alt="Profile Picture" class="profile-picture">
+        <h1 class="username">Username</h1>
+    </div>
+    
+    <div class="tab-container">
+        <button class="tab-button" onclick="showTab('posts')">My Posts</button>
+        <button class="tab-button" onclick="showTab('messages')">Messages</button>
+        <button class="tab-button" onclick="showTab('paid-items')">Paid Items</button>
+        <button class="tab-button" onclick="showTab('settings')">Settings</button>
+    </div>
+    
+    <div id="posts" class="tab-content">
+        <h2>My Posts</h2>
+        <div class="post">
+            <img src="images/car1.jpg" alt="Car" class="post-image">
+            <p>Car model, year, specifications...</p>
+        </div>
+    </div>
+    
+    <div id="messages" class="tab-content">
+        <h2>Messages</h2>
+        <p>Your messages will appear here.</p>
+    </div>
+    
+    <div id="paid-items" class="tab-content">
+        <h2>Paid Items</h2>
+        <p>Your purchased items will be displayed here.</p>
+    </div>
+    
+    <div id="settings" class="tab-content">
+        <h3>Settings</h3>
+        <ul class="settings-menu">
+            <li>
+                <button class="settings-option" onclick="togglePictureMenu()">Change Profile Picture <span class="arrow-icon">▼</span></button>
+                <div id="picture-menu" class="hidden">
+                    <div class="inner-box">
+                        <label for="profile-picture">Upload New Picture:</label>
+                        <input type="file" id="profile-picture" />
+                        <button class="save-button">Save</button>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <button class="settings-option" onclick="togglePasswordMenu()">
+                    Change Password <span class="arrow-icon">▼</span>
+                </button>
+                <div id="password-menu" class="hidden">
+                    <div class="inner-box">
+                        <label for="current-password">Current Password:</label>
+                        <input type="password" id="current-password" placeholder="Enter current password" />
+                        <label for="new-password">New Password:</label>
+                        <input type="password" id="new-password" placeholder="Enter new password" />
+                        <button class="save-button">Save</button>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <button class="settings-option" onclick="toggleEmailMenu()">Change Email <span class="arrow-icon">▼</span></button>
+                <div id="email-menu" class="hidden">
+                    <div class="inner-box">
+                        <label for="new-email">New Email:</label>
+                        <input type="email" id="new-email" placeholder="Enter new email" />
+                        <label for="email-password">Password:</label>
+                        <input type="password" id="email-password" placeholder="Confirm password" />
+                        <button class="save-button">Save</button>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <button class="settings-option" onclick="toggleUsernameMenu()">Change Username <span class="arrow-icon">▼</span></button>
+                <div id="username-menu" class="hidden">
+                    <div class="inner-box">
+                        <label for="new-username">New Username:</label>
+                        <input type="text" id="new-username" placeholder="Enter new username" />
+                        <label for="username-password">Password:</label>
+                        <input type="password" id="username-password" placeholder="Confirm password" />
+                        <button class="save-button">Save</button>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <script src="js/profile.js"></script>
+</body>
+</html>

@@ -1,26 +1,32 @@
-// Get the form and error message element
-const loginForm = document.getElementById('loginForm');
-const errorMessage = document.getElementById('error-message');
+document.getElementById('loginForm').addEventListener('submit', function (event) {
+    event.preventDefault(); // Prevent default form submission
 
-// Hardcoded credentials for demo purposes
-const correctUsername = 'user123';
-const correctPassword = 'password123';
-
-// Add event listener for form submission
-loginForm.addEventListener('submit', function (event) {
-    event.preventDefault(); // Prevent form from submitting and refreshing the page
-
-    // Get username and password input values
     const username = document.getElementById('username').value;
     const password = document.getElementById('password').value;
 
-    // Simple validation 
-    if (username === correctUsername && password === correctPassword) {
-        // Simulate a successful login (redirect to the homepage)
-        alert('Login successful!');
-        window.location.href = 'index.html'; // Redirect to the homepage
-    } else {
-        // Show error message
-        errorMessage.style.display = 'block';
-    }
+    // Send form data using fetch
+    fetch('login.php', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: `username=${username}&password=${password}`,
+    })
+    .then(response => response.json())
+    .then(data => {
+        // If the login is successful, redirect to the home page
+        if (data.status === 'success') {
+            window.location.href = 'index.php'; // Redirect to homepage or dashboard
+        } else {
+            // Display the error message
+            document.getElementById('error-message').textContent = data.message;
+            document.getElementById('error-message').style.display = 'block';
+        }
+    })
+    .catch(error => {
+        // Handle errors (e.g., network issues)
+        console.error('Error:', error);
+        document.getElementById('error-message').textContent = 'An error occurred. Please try again.';
+        document.getElementById('error-message').style.display = 'block';
+    });
 });

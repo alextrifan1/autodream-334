@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Login - Autodream</title>
+        <title>Login - AutoDream</title>
         <link rel="stylesheet" href="css/login.css">
     </head>
     <body>
@@ -12,11 +12,17 @@
             <form id="loginForm">
                 <label for="username">Username:</label>
                 <input type="text" id="username" name="username" required>
+                
                 <label for="password">Password:</label>
                 <input type="password" id="password" name="password" required>
+                
                 <button type="submit">Login</button>
             </form>
             <p id="error-message" style="color:red; display:none;">Invalid username or password.</p>
+
+            <div class="signup-message">
+                <p>Don't have an account? <a href="signup.html">Sign up here</a></p>
+            </div>
         </div>
 
         <script src="js/login.js"></script>
