@@ -1,24 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Login - Autodream</title>
-        <link rel="stylesheet" href="css/login.css">
-    </head>
-    <body>
-        <div class="login-container">
-            <h2>Login to AutoDream</h2>
-            <form id="loginForm">
-                <label for="username">Username:</label>
-                <input type="text" id="username" name="username" required>
-                <label for="password">Password:</label>
-                <input type="password" id="password" name="password" required>
-                <button type="submit">Login</button>
-            </form>
-            <p id="error-message" style="color:red; display:none;">Invalid username or password.</p>
-        </div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - AutoDream</title>
+    <link rel="stylesheet" href="css/login.css">
+</head>
+<body>
+<header>
+    <div class="logo-container">
+        <img src="images/AutoDream_logo.png" alt="AutoDream Logo" style="height: 200px; width: auto;">
+    </div>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="deals.html">Deals</a></li>
+            <li><a href="parts.html">Parts</a></li>
+            <li><a href="login.html">Login</a></li>
+        </ul>
+    </nav>
+</header>
 
-        <script src="js/login.js"></script>
-    </body>
+<div class="login-container">
+    <h2>Login to AutoDream</h2>
+    <form id="loginForm">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+        <button type="submit">Login</button>
+    </form>
+    <p id="error-message" style="color:red; display:none;">Invalid username or password.</p>
+</div>
+
+<script src="js/login.js"></script>
+</body>
 </html>

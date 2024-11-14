@@ -1,56 +1,38 @@
 document.addEventListener("DOMContentLoaded", function () {
-    // Cod pentru încărcarea anunțului
-    fetch("/api/getListing?id=123")
-        .then(response => response.json())
-        .then(data => {
-            document.getElementById("title").textContent = data.title;
-            document.getElementById("category").textContent = `Categorie: ${data.category}`;
-            document.getElementById("make").textContent = `Marca: ${data.make}`;
-            document.getElementById("model").textContent = `Model: ${data.model}`;
-            document.getElementById("year").textContent = `An de fabricație: ${data.year}`;
-            document.getElementById("price").textContent = `Preț: ${data.price} EUR`;
-            document.getElementById("description").textContent = data.description;
+    // Cod pentru încărcarea pieselor
+    const partsContainer = document.querySelector(".parts-listing");
 
-            const imagesContainer = document.getElementById("images");
-            imagesContainer.innerHTML = '';
-            data.images.forEach(imageUrl => {
-                const imgElement = document.createElement("img");
-                imgElement.src = imageUrl;
-                imgElement.alt = "Imagine produs";
-                imgElement.classList.add("product-image");
-                imagesContainer.appendChild(imgElement);
-            });
-        })
-        .catch(error => console.error("Eroare la încărcarea anunțului:", error));
+    const nameInput = document.getElementById("title");
+    const categoryInput = document.getElementById("category");
+    const priceInput = document.getElementById("price");
 
-    // Deschiderea ferestrei modale
-    const sendMessageBtn = document.getElementById("sendMessageBtn");
-    const messageModal = document.getElementById("messageModal");
-    const closeBtn = document.querySelector(".close");
+    // Funcția de aplicare a filtrelor
+    function applyFilters() {
+        const nameQuery = nameInput.value.toLowerCase();
+        const categoryQuery = categoryInput.value.toLowerCase();
+        const priceQuery = priceInput.value ? parseFloat(priceInput.value) : Infinity;
 
-    sendMessageBtn.addEventListener("click", function() {
-        messageModal.style.display = "block";
-    });
+        // Selectăm toate piesele
+        const partItems = document.querySelectorAll(".part-item");
 
-    closeBtn.addEventListener("click", function() {
-        messageModal.style.display = "none";
-    });
+        partItems.forEach(part => {
+            const title = part.querySelector("h3").textContent.toLowerCase();
+            const category = part.querySelector("p").textContent.toLowerCase();
+            const priceText = part.querySelector("p:nth-of-type(2)").textContent;
+            const price = parseFloat(priceText.replace("Preț: ", "").replace("EUR", "").trim());
 
-    // Închiderea ferestrei modale când utilizatorul face click în afară
-    window.addEventListener("click", function(event) {
-        if (event.target === messageModal) {
-            messageModal.style.display = "none";
-        }
-    });
+            // Verificăm dacă piesa se potrivește cu filtrele
+            const matchesName = title.includes(nameQuery);
+            const matchesCategory = category.includes(categoryQuery);
+            const matchesPrice = price <= priceQuery;
 
-    // Trimiterea mesajului
-    const messageForm = document.getElementById("messageForm");
-    messageForm.addEventListener("submit", function(event) {
-        event.preventDefault();
-        const message = document.getElementById("messageText").value;
-        console.log("Mesaj trimis:", message);
-        // Aici poți trimite mesajul printr-un API sau să îl salvezi într-o bază de date
-        messageModal.style.display = "none"; // Închide modalul după trimiterea mesajului
-    });
+            // Afișăm piesa dacă se potrivește cu filtrele
+            part.style.display = (matchesName && matchesCategory && matchesPrice) ? "block" : "none";
+        });
+    }
 
+    // Adăugăm evenimente pentru a aplica filtrele la fiecare schimbare a inputurilor
+    nameInput.addEventListener("input", applyFilters);
+    categoryInput.addEventListener("input", applyFilters);
+    priceInput.addEventListener("input", applyFilters);
 });
