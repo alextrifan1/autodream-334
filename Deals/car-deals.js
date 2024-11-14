@@ -77,8 +77,9 @@ function deleteCar(carId) {
 
 // Show the upload form when the "Add New Car Deal" button is clicked
 document.getElementById('add-car-btn').addEventListener('click', () => {
-    document.getElementById('upload-form').style.display = 'block';
+    document.getElementById('upload-form').style.display = 'block';  // Show the form
 });
+
 
 // Handle the form submission
 document.getElementById('submit-car').addEventListener('click', (e) => {

@@ -3,28 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Car Deals</title>
+    <title>Deals</title>
     <link rel="stylesheet" href="car-deals.css">
 </head>
 <body>
-    <h1>Car Deals</h1>
+    <div id="car-deals-header">
+        <a href="/home/alex/Documents/GitHub/autodream-334/index.html" id="back-to-index">Acasa</a>
+        <div id="header-title">Anunturi</div>
+    </div>
+
     <div id="car-container"></div>
 
-    <!-- Button to add a new car -->
+    <!-- Button to add a new car deal -->
     <button id="add-car-btn">Add New Car Deal</button>
 
-    <!-- Form to upload new car details -->
+    <!-- Form for uploading new car deal -->
     <div id="upload-form">
-        <h2>Upload New Car Deal</h2>
-        <label for="car-name">Car Name:</label><br>
-        <input type="text" id="car-name" required><br>
-        <label for="car-description">Description:</label><br>
-        <textarea id="car-description" required></textarea><br>
-        <label for="car-price">Price:</label><br>
-        <input type="text" id="car-price" required><br>
-        <label for="car-images">Car Images:</label><br>
-        <input type="file" id="car-images" accept="image/*" multiple required><br>
-        <button id="submit-car">Submit Car Deal</button>
+        <form>
+            <label for="car-name">Car Name:</label>
+            <input type="text" id="car-name" name="car-name" required>
+        
+            <label for="car-description">Car Description:</label>
+            <textarea id="car-description" name="car-description" required></textarea>
+        
+            <label for="car-price">Car Price:</label>
+            <input type="text" id="car-price" name="car-price" required>
+        
+            <label for="car-images">Car Images:</label>
+            <input type="file" id="car-images" name="car-images" multiple required>
+        
+            <button type="submit" id="submit-car">Submit Car</button>
+        </form>
     </div>
 
     <script src="car-deals.js"></script>

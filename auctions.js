@@ -14,6 +14,7 @@ function openPopup(carName, highestBid, highestBidder) {
 }
 
 // Funcție pentru a plasa un bid nou
+// Funcție pentru a plasa un bid nou
 function placeNewBid() {
     let carName = document.getElementById('popup-car-name').textContent;
     let bidAmount = parseFloat(prompt("Enter your bid amount:"));
@@ -21,13 +22,24 @@ function placeNewBid() {
     if (!isNaN(bidAmount) && bidAmount > auctions[carName].highestBid) {
         auctions[carName].highestBid = bidAmount;
         auctions[carName].currentBidder = "Anonymous"; // Poți înlocui cu numele utilizatorului
+        
+        // Afișăm un mesaj de confirmare
         alert(`Your bid of $${bidAmount} has been placed!`);
+        
+        // Actualizăm afișarea licitației pe pagina principală
         updateAuctionDisplay(carName);
+        
+        // Actualizăm și afișarea în pop-up
+        document.getElementById('current-highest-bid').textContent = `Current Highest Bid: $${bidAmount}`;
+        document.getElementById('highest-bidder').textContent = "Anonymous"; // Poți înlocui cu numele utilizatorului
+        
+        // Închidem pop-up-ul
         closePopup();
     } else {
         alert("Your bid must be higher than the current highest bid.");
     }
 }
+
 
 // Funcție pentru actualizarea afișării licitației pentru o anumită mașină
 function updateAuctionDisplay(carName) {
@@ -39,7 +51,7 @@ function updateAuctionDisplay(carName) {
 
 // Funcție pentru închiderea pop-up-ului
 function closePopup() {
-    document.getElementById('bid-popup hidden').classList.add('hidden');
+    document.getElementById('bid-popup').classList.add('hidden');
 }
 
 // Eveniment pentru toate butoanele "Place Bid"
@@ -54,7 +66,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Eveniment pentru butonul "Place a New Bid" din pop-up
     const placeBidButton = document.getElementById("place-new-bid-btn");
-    placeBidButton.addEventListener("click", placeNewBid);
+    if (placeBidButton) {
+        placeBidButton.addEventListener("click", placeNewBid);
+    }
 
     // Închiderea pop-up-ului atunci când se face click în afara acestuia
     const popup = document.getElementById('bid-popup');

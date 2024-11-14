@@ -6,6 +6,17 @@ body {
     background-color: #f4f4f4;
 }
 
+/* Red header for the car deals section */
+#car-deals-header {
+    background-color: #e60000;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
 /* Container for car deals */
 #car-container {
     display: grid;
@@ -134,4 +145,63 @@ body {
     #car-container {
         grid-template-columns: 1fr;
     }
+}
+
+/* Initially hide the upload form */
+#upload-form {
+    display: none;
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    margin: 20px auto;
+}
+
+/* Other styles for the button, form, and other elements */
+#add-car-btn {
+    background-color: #27ae60;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin: 20px;
+    transition: background-color 0.3s ease;
+}
+
+#add-car-btn:hover {
+    background-color: #2ecc71;
+}
+
+/* Style for the "Back to Home" link */
+#back-to-index {
+    text-decoration: none;
+    color: #fcfbfb; /* Tomato color */
+    font-size: 1.2rem;
+    margin-right: 20px;
+}
+
+#back-to-index:hover {
+    color: #d84f2d; /* Darker shade on hover */
+}
+
+/* Ensure the link and the title appear on separate rows */
+#car-deals-header {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center the items */
+}
+
+#back-to-index {
+    text-decoration: none;
+    color: #fffdfc; /* Tomato color */
+    font-size: 1.2rem;
+    margin-bottom: 10px; /* Space between the link and title */
+}
+
+#header-title {
+    font-size: 2rem;
+    font-weight: bold;
 }

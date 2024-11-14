@@ -24,39 +24,30 @@
     <section class="hero">
         <h2>Exclusive Car Auctions</h2>
         <p>Bid on a wide range of luxury and classic cars.</p>
-        <button onclick="window.location.href='upcoming-auctions.html'">View Upcoming Auctions</button>
     </section>
 
 <section class="auction-list">
     <h3>Current Auctions</h3>
     <div class="auction-gallery">
         <div class="auction-item" data-car="2021 Ferrari SF90">
-            <img src="images/auction-car1.jpg" alt="Auction Car 1">
-            <div class="auction-details">
-                <h4>2021 Ferrari SF90</h4>
-                <p class="starting-bid">Starting Bid: $300,000</p>
-                <button class="view-product-btn">View Product</button>
-                <button class="place-bid-btn" data-car="2021 Ferrari SF90">Place Bid</button>
-            </div>
+            <img src="images/ferrari.jpg" alt="Auction Car 1">
+            <h3>2021 Ferrari SF90</h3>
+            <p class="highest-bid">Current Highest Bid: $300000</p>
+            <button class="place-bid-btn" data-car="2021 Ferrari SF90">Place Bid</button>
         </div>
         <div class="auction-item" data-car="1965 Ford Mustang">
-            <img src="images/auction-car2.jpg" alt="Auction Car 2">
-            <div class="auction-details">
-                <h4>1965 Ford Mustang</h4>
-                <p class="starting-bid">Starting Bid: $50,000</p>
-                <button class="view-product-btn">View Product</button>
-                <button class="place-bid-btn" data-car="1965 Ford Mustang">Place Bid</button>
-            </div>
-        </div>
+            <img src="images/mustang.jpg" alt="Auction Car 2">
+            <h3>1965 Ford Mustang</h3>
+            <p class="highest-bid">Current Highest Bid: $50000</p>
+            <button class="place-bid-btn" data-car="1965 Ford Mustang">Place Bid</button>
+        </div>        
         <div class="auction-item" data-car="2020 Porsche 911">
-            <img src="images/auction-car3.jpg" alt="Auction Car 3">
-            <div class="auction-details">
-                <h4>2020 Porsche 911</h4>
-                <p class="starting-bid">Starting Bid: $150,000</p>
-                <button class="view-product-btn">View Product</button>
-                <button class="place-bid-btn" data-car="2020 Porsche 911">Place Bid</button>
-            </div>
+            <img src="images/porsche.jpg" alt="Auction Car 3">
+            <h3>2020 Porsche 911</h3>
+            <p class="highest-bid">Current Highest Bid: $150000</p>
+            <button class="place-bid-btn" data-car="2020 Porsche 911">Place Bid</button>
         </div>
+        
     </div>
 </section>
 
@@ -68,7 +59,7 @@
         <p id="popup-car-name"></p>
         <p>Highest Bidder: <span id="highest-bidder">No bids yet</span></p>
         <p>Current Highest Bid: $<span id="current-highest-bid">0</span></p>
-        <button onclick="placeNewBid()">Place a New Bid</button>
+        <button id="place-new-bid-btn">Place a New Bid</button>
     </div>
 </div>
 </body>
