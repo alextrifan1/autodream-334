@@ -1,0 +1,98 @@
+/* General page styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Header Styling */
+h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-top: 20px;
+    color: #333;
+}
+
+/* Container for car details */
+.car-details {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Car info styling */
+.car-info {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.car-info h2 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.car-info p {
+    font-size: 1rem;
+    margin: 5px 0;
+}
+
+.car-info strong {
+    font-weight: bold;
+}
+
+/* Slideshow styling */
+.car-images {
+    position: relative;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.car-images img {
+    width: 100%;
+    height: auto;
+    display: none;
+    border-radius: 8px;
+}
+
+.car-images img.active {
+    display: block;
+}
+
+button {
+    position: absolute;
+    top: 50%;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    transform: translateY(-50%);
+    border-radius: 50%;
+    z-index: 10;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+/* Styling for the "car not found" message */
+.car-not-found {
+    text-align: center;
+    font-size: 1.5rem;
+    color: red;
+    margin-top: 50px;
+}

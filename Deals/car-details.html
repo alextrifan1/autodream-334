@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Car Details</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="car-details.css">
 </head>
 <body>
     <h1>Car Details</h1>
@@ -12,7 +12,46 @@
         <!-- Car details will be dynamically inserted here -->
     </div>
 
-    <!-- Link to the external JavaScript file -->
-    <script src="car-details.js"></script>
+    <script>
+        // Retrieve carDeals from localStorage
+        const carDeals = JSON.parse(localStorage.getItem('carDeals')) || [];
+
+        const urlParams = new URLSearchParams(window.location.search);
+        const carId = parseInt(urlParams.get('id'));
+
+        // Find the car based on the ID
+        const car = carDeals.find(car => car.id === carId);
+
+        // Display the car details if found
+        if (car) {
+            const container = document.getElementById('car-details-container');
+            container.innerHTML = `
+                <div class="car-info">
+                    <h2>${car.name}</h2>
+                    <p>${car.description}</p>
+                    <p><strong>Price:</strong> ${car.price}</p>
+                </div>
+                <div class="car-images" id="slideshow-container">
+                    <img src="${car.images[0]}" alt="${car.name}" class="active">
+                    <img src="${car.images[1]}" alt="${car.name}">
+                    <img src="${car.images[2]}" alt="${car.name}">
+                    <button class="prev" onclick="changeImage(-1)">&#10094;</button>
+                    <button class="next" onclick="changeImage(1)">&#10095;</button>
+                </div>
+            `;
+        } else {
+            document.body.innerHTML = '<h1>Car not found</h1>';
+        }
+
+        let currentImageIndex = 0;
+
+        // Function to change the displayed image
+        function changeImage(direction) {
+            const images = document.querySelectorAll('.car-images img');
+            images[currentImageIndex].classList.remove('active');
+            currentImageIndex = (currentImageIndex + direction + images.length) % images.length;
+            images[currentImageIndex].classList.add('active');
+        }
+    </script>
 </body>
 </html>
