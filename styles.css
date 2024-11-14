@@ -1,0 +1,219 @@
+/* Stiluri generale */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f0f4f8;
+    color: #810e0e;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #ac0f0f;
+    color: #ecf0f1;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0px 4px 6px rgba(216, 7, 7, 0.1);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2em;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: #ecf0f1;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #f79684;
+}
+
+/* Stiluri pentru secțiunea eroului */
+.hero {
+    text-align: center;
+    padding: 60px 20px;
+    color: #50342c;
+    background: linear-gradient(135deg, #f5c7c7, #f7b99c);
+    border-radius: 10px;
+    margin: 30px auto;
+    width: 90%;
+    max-width: 800px;
+    box-shadow: 0px 4px 8px rgba(87, 3, 3, 0.1);
+}
+
+.hero h2 {
+    font-size: 2.2em;
+    color: #921302;
+    margin: 0;
+}
+
+.hero p {
+    font-size: 1.2em;
+    color: #f8dbdb;
+    margin-bottom: 20px;
+}
+
+.hero button {
+    padding: 12px 24px;
+    background-color: #db5534;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 1em;
+    border-radius: 5px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.hero button:hover {
+    background-color: #2980b9;
+    transform: scale(1.05);
+}
+
+/* Stiluri pentru secțiunea de licitații */
+.auction-list {
+    padding: 40px 20px;
+    text-align: center;
+    color: #810e0e;
+}
+
+.auction-gallery {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.auction-item {
+    background: #f7f7f9;
+    border-radius: 12px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 300px;
+    transition: transform 0.3s;
+    text-align: center;
+}
+
+.auction-item:hover {
+    transform: scale(1.05);
+}
+
+.auction-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.auction-details {
+    padding: 20px;
+}
+
+.auction-details h4 {
+    color: #810e0e;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.starting-bid {
+    color: #ac0f0f;
+    font-size: 1.2em;
+    margin-bottom: 15px;
+}
+
+.view-product-btn, .place-bid-btn {
+    padding: 10px 15px;
+    margin: 5px;
+    border: none;
+    color: white;
+    font-size: 1em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.view-product-btn {
+    background-color: #2980b9;
+}
+
+.view-product-btn:hover {
+    background-color: #3498db;
+}
+
+.place-bid-btn {
+    background-color: #db5534;
+}
+
+.place-bid-btn:hover {
+    background-color: #e74c3c;
+}
+
+/* Stiluri pentru pop-up */
+.bid-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hidden {
+    display: none;
+}
+
+.popup-content {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    width: 300px;
+    text-align: center;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+.popup-content h4 {
+    margin: 0;
+    color: #810e0e;
+}
+
+.popup-content button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #db5534;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.popup-content button:hover {
+    background-color: #e74c3c;
+}
